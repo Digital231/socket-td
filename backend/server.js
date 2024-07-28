@@ -57,7 +57,7 @@ const buildings = {
   farm: {
     name: "Farm",
     emoji: "🌾",
-    price: 15,
+    price: 35,
     health: 100,
     maxHp: 100,
     goldPerSecond: 1,
@@ -207,6 +207,13 @@ io.on("connection", (socket) => {
   });
 });
 
+function updateGoldPerSecondOnDestroy(game, buildingIndex) {
+  const building = game.grid[buildingIndex];
+  if (building && building.goldPerSecond) {
+    game.players[building.playerIndex].goldPerSecond -= building.goldPerSecond;
+  }
+}
+
 function spawnUnit(game, buildingIndex, building, playerIndex) {
   const unitType = unitTypes[building.unitType];
   const unit = {
@@ -250,6 +257,7 @@ function moveUnits(game) {
           //   `Unit at ${unit.position} attacked building at ${newPosition}. New HP: ${targetBuilding.hp}`
           // );
           if (targetBuilding.hp <= 0) {
+            updateGoldPerSecondOnDestroy(game, newPosition);
             game.grid[newPosition] = null;
             // console.log(`Building at ${newPosition} destroyed`);
           }

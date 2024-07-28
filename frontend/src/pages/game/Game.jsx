@@ -267,6 +267,7 @@ const Game = () => {
               >
                 {buildings[buildingType].emoji} {buildings[buildingType].name} -{" "}
                 {buildings[buildingType].price} gold
+                {buildings[buildingType].description}
               </Button>
             ))}
         </Modal.Body>
@@ -286,6 +287,7 @@ const buildings = {
     maxHp: 10,
     spawnRate: 5000,
     unitType: "mage",
+    description: "Spawns mages",
   },
   barracks: {
     name: "Barracks",
@@ -295,6 +297,7 @@ const buildings = {
     maxHp: 10,
     spawnRate: 7000,
     unitType: "warrior",
+    description: "Spawns Warriors",
   },
   defenseWall: {
     name: "Defense Wall",
@@ -302,14 +305,16 @@ const buildings = {
     price: 10,
     health: 350,
     maxHp: 350,
+    description: "Defensive wall",
   },
   farm: {
     name: "Farm",
     emoji: "🌾",
-    price: 15,
+    price: 35,
     health: 100,
     maxHp: 100,
     goldPerSecond: 1,
+    description: "Gives gold per second",
   },
   repairStation: {
     name: "Repair Station",
@@ -318,5 +323,6 @@ const buildings = {
     health: 50,
     maxHp: 50,
     repairRate: 1,
+    description: "Repairs main base",
   },
 };
