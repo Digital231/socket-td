@@ -1,5 +1,6 @@
 const express = require("express");
 const http = require("http");
+const path = require("path");
 const socketIo = require("socket.io");
 const app = express();
 const server = http.createServer(app);
@@ -7,13 +8,20 @@ const cors = require("cors");
 
 const io = socketIo(server, {
   cors: {
-    origin: "http://localhost:5173",
+    origin: "https://socket-td-backend.onrender.com",
     methods: ["GET", "POST"],
   },
 });
 
 app.use(cors());
 app.use(express.json());
+
+const frontendBuildPath = path.join(__dirname, "../frontend/dist");
+app.use(express.static(frontendBuildPath));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(frontendBuildPath, "index.html"));
+});
 
 const PORT = process.env.PORT || 5000;
 

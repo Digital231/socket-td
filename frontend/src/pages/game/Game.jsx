@@ -6,7 +6,7 @@ import ProgressBar from "react-bootstrap/ProgressBar";
 import io from "socket.io-client";
 import useStore from "../../context/mainStore";
 
-const socket = io("http://localhost:5000");
+const socket = io("https://socket-td-backend.onrender.com");
 
 const Game = () => {
   const { username, gameId, setGold, setGoldPerSecond } = useStore((state) => ({

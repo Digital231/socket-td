@@ -12,7 +12,7 @@ import useStore from "../../context/mainStore";
 import io from "socket.io-client";
 import { useNavigate } from "react-router-dom";
 
-const socket = io("http://localhost:5000");
+const socket = io("https://socket-td-backend.onrender.com");
 
 const GameLobby = () => {
   const { username, gameId, setGameId } = useStore((state) => ({
