@@ -15,7 +15,9 @@ const Login = () => {
     event.preventDefault();
     const username = event.target[0].value;
     try {
-      await axios.post("http://localhost:5000/login", { username });
+      await axios.post("https://socket-td-backend.onrender.com/login", {
+        username,
+      });
       setUsername(username);
       setIsLoggedIn(true);
       nav("/lobby");
