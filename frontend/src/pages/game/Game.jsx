@@ -266,7 +266,7 @@ const Game = () => {
                 onClick={() => handleBuildingSelect(buildingType)}
               >
                 {buildings[buildingType].emoji} {buildings[buildingType].name} -{" "}
-                {buildings[buildingType].price} gold
+                {buildings[buildingType].price} gold -{" "}
                 {buildings[buildingType].description}
               </Button>
             ))}
@@ -324,5 +324,13 @@ const buildings = {
     maxHp: 50,
     repairRate: 1,
     description: "Repairs main base",
+  },
+  castle: {
+    name: "Castle",
+    emoji: "🤺",
+    price: 100,
+    health: 500,
+    maxHp: 500,
+    description: "Crazy good units",
   },
 };

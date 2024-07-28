@@ -70,11 +70,21 @@ const buildings = {
     maxHp: 50,
     repairRate: 1,
   },
+  castle: {
+    name: "Castle",
+    emoji: "🏰",
+    price: 100,
+    health: 500,
+    maxHp: 500,
+    spawnRate: 10000,
+    unitType: "paladin",
+  },
 };
 
 const unitTypes = {
   mage: { type: "mage", health: 10, maxHp: 10, damage: 2 },
   warrior: { type: "warrior", health: 15, maxHp: 15, damage: 3 },
+  paladin: { type: "paladin", health: 35, maxHp: 35, damage: 6 },
 };
 
 app.post("/login", (req, res) => {
