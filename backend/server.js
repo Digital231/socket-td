@@ -8,7 +8,7 @@ const cors = require("cors");
 
 const io = socketIo(server, {
   cors: {
-    origin: "https://socket-td-backend.onrender.com",
+    origin: "https://socket-td-backend.onrender.com/",
     methods: ["GET", "POST"],
   },
 });
