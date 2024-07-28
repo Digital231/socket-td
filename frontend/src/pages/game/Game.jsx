@@ -184,7 +184,11 @@ const Game = () => {
                   fontSize: "10px",
                 }}
               >
-                {unit.type === "mage" ? "🧙‍♂️" : "⚔️"}
+                {unit.type === "mage"
+                  ? "🧙‍♂️"
+                  : unit.type === "warrior"
+                  ? "⚔️"
+                  : "🤺"}
                 {renderHPBar(
                   unit.health,
                   unit.maxHp,

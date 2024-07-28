@@ -72,7 +72,7 @@ const buildings = {
   },
   castle: {
     name: "Castle",
-    emoji: "🏰",
+    emoji: "🤺",
     price: 100,
     health: 500,
     maxHp: 500,
