@@ -16,11 +16,10 @@ const io = socketIo(server, {
 app.use(cors());
 app.use(express.json());
 
-const frontendBuildPath = path.join(__dirname, "../frontend/dist");
-app.use(express.static(frontendBuildPath));
+app.use(express.static(path.join(__dirname, "..", "frontend", "dist")));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.resolve(frontendBuildPath, "index.html"));
+  res.sendFile(path.join(__dirname, "..", "frontend", "dist", "index.html"));
 });
 
 const PORT = process.env.PORT || 5000;
