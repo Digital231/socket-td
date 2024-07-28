@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node backend/server.js",
+    "build": "cd frontend && npm install && npm run build && cd .. && npm install --prefix backend"
   },
   "author": "",
   "license": "ISC",
