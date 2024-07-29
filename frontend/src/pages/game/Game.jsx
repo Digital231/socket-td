@@ -205,7 +205,10 @@ const Game = () => {
   return (
     <div>
       <ResourceBar />
-      <h2 className="text-center">Welcome to Tower Defense Game {gameId}</h2>
+      <h2 className="text-center">
+        Welcome to Tower Defense Game. Game ID:{" "}
+        <span style={{ fontWeight: "bold" }}>{gameId}</span>
+      </h2>
       <div className="gameDiv d-flex justify-content-between align-items-center">
         <div className="playerSide position-relative">
           <img
